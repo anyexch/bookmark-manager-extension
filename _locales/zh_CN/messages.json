@@ -1,0 +1,14 @@
+{
+  "extName": {
+    "message": "书签导入导出管理器",
+    "description": "显示在 Chrome 和 Chrome 应用商店中的扩展名称。"
+  },
+  "extDescription": {
+    "message": "导出 Chrome 书签供 AI 辅助清理，再把整理后的书签导回 Chrome。",
+    "description": "显示在 Chrome 和 Chrome 应用商店中的简短扩展说明。"
+  },
+  "actionTitle": {
+    "message": "书签管理器",
+    "description": "工具栏按钮标题。"
+  }
+}

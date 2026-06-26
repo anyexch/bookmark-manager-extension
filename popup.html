@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bookmark Manager</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <header class="topbar">
+        <div>
+          <h1 data-i18n="appTitle">书签导入导出</h1>
+          <p id="status" data-i18n="statusReady">扫描当前书签，或选择文件导入。删除/清空导入需要输入确认文本。</p>
+        </div>
+        <label class="language-control">
+          <span data-i18n="languageLabel">语言</span>
+          <select id="languageSelect" aria-label="Language">
+            <option value="zh">中文</option>
+            <option value="en">English</option>
+          </select>
+        </label>
+      </header>
+
+      <section class="stats" aria-live="polite">
+        <div>
+          <strong id="bookmarkCount">-</strong>
+          <span data-i18n="currentBookmarks">当前书签</span>
+        </div>
+        <div>
+          <strong id="folderCount">-</strong>
+          <span data-i18n="currentFolders">当前文件夹</span>
+        </div>
+        <div>
+          <strong id="parsedCount">-</strong>
+          <span data-i18n="importBookmarks">待导入书签</span>
+        </div>
+        <div>
+          <strong id="parsedFolderCount">-</strong>
+          <span data-i18n="importFolders">待导入文件夹</span>
+        </div>
+      </section>
+
+      <section>
+        <h2 data-i18n="exportTitle">导出 Chrome 书签</h2>
+        <div class="button-grid">
+          <button id="scanBtn" class="primary" type="button" data-i18n="scanBtn">扫描书签</button>
+          <button id="mdBtn" type="button" disabled data-i18n="exportMarkdown">导出 Markdown</button>
+          <button id="jsonBtn" type="button" disabled data-i18n="exportJson">导出 JSON</button>
+          <button id="htmlBtn" type="button" disabled data-i18n="exportHtml">导出 HTML</button>
+        </div>
+        <label class="check">
+          <input id="includePrompt" type="checkbox" checked>
+          <span data-i18n="includePrompt">Markdown 加入 AI 分类提示词</span>
+        </label>
+        <label class="check">
+          <input id="includeDates" type="checkbox" checked>
+          <span data-i18n="includeDates">导出添加日期</span>
+        </label>
+      </section>
+
+      <section>
+        <h2 data-i18n="importTitle">导入书签文件</h2>
+        <input id="fileInput" type="file" accept=".json,.md,.markdown,.html,.htm,text/markdown,application/json,text/html">
+        <label class="check">
+          <input id="clearBeforeImport" type="checkbox">
+          <span data-i18n="clearBeforeImport">导入前先清空现有书签</span>
+        </label>
+        <button id="importBtn" class="primary" type="button" disabled data-i18n="importBtn">导入文件</button>
+      </section>
+
+      <section class="danger">
+        <h2 data-i18n="deleteTitle">删除全部书签</h2>
+        <p data-i18n="deleteHelp">会删除书签栏、其他书签、移动书签等根目录下的全部子书签和文件夹。</p>
+        <label>
+          <span data-i18n="confirmLabel">确认文本</span>
+          <input id="confirmText" type="text" data-i18n-placeholder="confirmPlaceholder" placeholder="输入 DELETE ALL">
+        </label>
+        <button id="deleteBtn" type="button" data-i18n="deleteBtn">仅删除全部书签</button>
+      </section>
+
+      <section>
+        <h2 data-i18n="previewTitle">预览</h2>
+        <textarea id="preview" readonly data-i18n-placeholder="previewPlaceholder" placeholder="扫描或选择导入文件后显示预览"></textarea>
+      </section>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

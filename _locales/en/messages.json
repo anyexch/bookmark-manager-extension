@@ -1,0 +1,14 @@
+{
+  "extName": {
+    "message": "Bookmark Import Export Manager",
+    "description": "Extension name shown in Chrome and Chrome Web Store."
+  },
+  "extDescription": {
+    "message": "Export Chrome bookmarks for AI-assisted cleanup, then import the cleaned bookmarks back into Chrome.",
+    "description": "Short extension description shown in Chrome and Chrome Web Store."
+  },
+  "actionTitle": {
+    "message": "Bookmark Manager",
+    "description": "Toolbar action title."
+  }
+}
